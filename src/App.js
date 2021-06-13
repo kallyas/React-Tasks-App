@@ -10,10 +10,10 @@ const initialState = [
 
 function App() {
   const [tasks, setTasks] = useState(initialState)
-  const [showAddTask, setShowAddTask] = useState(false)
+  const [showAddTask, setShowAddTask] = useState(true)
 
     const addTask = async (task) => {
-      const res = await fetch("http://localhost:4000/tasks", {
+      const res = await fetch("https://cr-tasks-api.herokuapp.com/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -35,19 +35,19 @@ function App() {
   }, [])
 
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:4000/tasks')
+    const res = await fetch('https://cr-tasks-api.herokuapp.com/tasks')
     const data = await res.json()
     return data
   }
 
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:4000/tasks/${id}`)
+    const res = await fetch(`https://cr-tasks-api.herokuapp.com/tasks/${id}`)
     const data = await res.json()
     return data
   }
 
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:4000/tasks/${id}`,
+    await fetch(`https://cr-tasks-api.herokuapp.com/tasks/${id}`,
     {
       method: "DELETE"
     })
@@ -58,7 +58,7 @@ function App() {
     const taskToggle = await fetchTask(id)
     const updateTask = {...taskToggle, reminder: !taskToggle.reminder}
 
-    const res = await fetch(`http://localhost:4000/tasks/${id}`, {
+    const res = await fetch(`https://cr-tasks-api.herokuapp.com/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json"
