@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -27,13 +29,13 @@ body {
 
 .btn {
   display: inline-block;
-  background: black;
+  background: #000;
   color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
@@ -53,7 +55,7 @@ body {
 }
 
 .task {
-  background: #fff;
+  background: #f4f4f4;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -105,6 +107,6 @@ body {
 }
 
 footer {
-  text-align: center;
   margin-top: 30px;
+  text-align: center;
 }
